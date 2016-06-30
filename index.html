@@ -1,0 +1,37 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<body>
+  <button id="number1" class="number" value="1">1</button>
+  <button id="number2" class="number" value="2">2</button>
+  <button id="number3" class="number" value="3">3</button><br>
+  <button id="minus" class="operation" value="-">-</button>
+  <button id="plus" class="operation" value="+">+</button>
+  <button id="result" class="result">=</button>
+  <p id="display" value="0">0</p>
+  <script>
+$(document).ready(function(){
+ var num1 = 0;
+ var num2 = 0;
+ var operator;
+ var resultvar;
+ $(".number").click(function(){
+   $("#display").text($(this).val());
+ });
+ $(".operation").click(function(){
+   if($("#display").text()==0) $("#display").text("0");
+   else {
+     num1=$("#display").text();
+
+   }
+ });
+ $("#result").click(function(){
+   if((num1==0)&&(num2==0)) $("#calculator_result").text("We need two numbers to operate");
+   else operator=$(this).val();
+ });
+
+});
+  </script>
+</body>
+</html>
