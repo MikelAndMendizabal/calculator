@@ -6,8 +6,15 @@
   <button id="number1" class="number" value="1">1</button>
   <button id="number2" class="number" value="2">2</button>
   <button id="number3" class="number" value="3">3</button><br>
+  <button id="number4" class="number" value="4">4</button>
+  <button id="number5" class="number" value="5">5</button>
+  <button id="number6" class="number" value="6">6</button><br>
+  <button id="number7" class="number" value="7">7</button>
+  <button id="number8" class="number" value="8">8</button>
+  <button id="number9" class="number" value="9">9</button><br>
   <button id="minus" class="operation" value="-">-</button>
-  <button id="plus" class="operation" value="+">+</button>
+  <button id="number0" class="number" value="0">0</button>
+  <button id="plus" class="operation" value="+">+</button><br>
   <button id="result" class="result">=</button>
   <p id="display" value="0">0</p>
   <script>
@@ -21,7 +28,6 @@ $(document).ready(function()
  {
    '+': function(a,b){return a+b},
    '-': function(a,b){return a-b}
-
  };
  $(".number").click(function(){
    if(first==0)
