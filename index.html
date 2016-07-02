@@ -11,24 +11,38 @@
   <button id="result" class="result">=</button>
   <p id="display" value="0">0</p>
   <script>
-$(document).ready(function(){
+$(document).ready(function()
+{
+ var first=0;
  var num1 = 0;
  var num2 = 0;
- var operator;
- var resultvar;
- $(".number").click(function(){
-   $("#display").text($(this).val());
- });
- $(".operation").click(function(){
-   if($("#display").text()==0) $("#display").text("0");
-   else {
-     num1=$("#display").text();
+ var operator =0;
+ var resultvar=
+ {
+   '+': function(a,b){return a+b},
+   '-': function(a,b){return a-b}
 
+ };
+ $(".number").click(function(){
+   if(first==0)
+    {
+    $("#display").text($(this).val());
+    num1= parseInt($("#display").text());
+    }
+   else
+   {
+   $("#display").text($(this).val());
+   num2= parseInt($("#display").text());
    }
  });
+ $(".operation").click(function(){
+   operator=$(this).val();
+   $("#display").text($(this).val());
+   first=1;
+ });
  $("#result").click(function(){
-   if((num1==0)&&(num2==0)) $("#calculator_result").text("We need two numbers to operate");
-   else operator=$(this).val();
+   $("#display").text(resultvar[operator](num1,num2));
+   first=0;
  });
 
 });
